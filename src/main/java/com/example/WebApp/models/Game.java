@@ -13,6 +13,17 @@ public class Game {
     private Long id;
 
     private String name, release_date, description;
+
+    private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     private int price;
 
     public Long getId() {
