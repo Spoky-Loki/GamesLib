@@ -17,4 +17,10 @@ public class HomeController {
         model.addAttribute("title", "Страница о нас");
         return "about";
     }
+
+    @GetMapping("/privacy")
+    public String privacy(Model model) {
+        model.addAttribute("title", "Страница Конфиденциальности");
+        return "privacy";
+    }
 }
