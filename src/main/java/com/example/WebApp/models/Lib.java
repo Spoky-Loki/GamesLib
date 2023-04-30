@@ -12,7 +12,7 @@ public class Lib {
     @Column(nullable = false)
     private Long user_id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private Long game_id;
 
     public Long getId() {
