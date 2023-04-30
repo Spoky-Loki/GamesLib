@@ -35,7 +35,9 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a th:href="'/games/' + ${element.id}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
-                                    <a th:href="'/addToLib/' + ${element.id}" class="btn btn-sm btn-outline-secondary">Добавить в библиотеку</a>
+                                    <form th:action="'/addToLib/' + ${element.id}" method="post">
+                                        <button class="btn btn-sm btn-outline-secondary" type="submit">Добавить в библиотеку</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

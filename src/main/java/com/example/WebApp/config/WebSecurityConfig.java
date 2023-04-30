@@ -47,7 +47,7 @@ public class WebSecurityConfig {
         http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/", "/home", "/games", "/sign_up",
-                                "/privacy", "/about", "/register_success", "/games/*", "/addToLib/*").permitAll()
+                                "/privacy", "/about", "/register_success", "/games/*").permitAll()
                         .requestMatchers(HttpMethod.POST, "/sign_up_process").permitAll()
                         .anyRequest().authenticated()
                 )
