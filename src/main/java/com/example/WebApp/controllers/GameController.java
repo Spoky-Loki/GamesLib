@@ -16,6 +16,7 @@ public class GameController {
     public String gameMain(Model model){
         Iterable<Game> games = gameRepository.findAll();
         model.addAttribute("games", games);
+
         return "gameMain";
     }
 

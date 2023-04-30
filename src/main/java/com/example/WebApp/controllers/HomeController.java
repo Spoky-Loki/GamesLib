@@ -18,20 +18,24 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "Главная страница");
+
         Iterable<Game> games = gameRepository.findAll();
         model.addAttribute("games", games);
+
         return "home";
     }
 
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("title", "Страница о нас");
+
         return "about";
     }
 
     @GetMapping("/privacy")
     public String privacy(Model model) {
         model.addAttribute("title", "Страница Конфиденциальности");
+
         return "privacy";
     }
 }
