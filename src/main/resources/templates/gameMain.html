@@ -30,7 +30,8 @@
                             <p th:text="${element.name}" class="card-text"/>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                    <a th:href="'/games/' + ${element.id}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                    <a th:href="'/addToLib/' + ${element.id}" class="btn btn-sm btn-outline-secondary">Добавить в библиотеку</a>
                                 </div>
                             </div>
                         </div>

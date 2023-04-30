@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Controller
 public class GameController {
@@ -20,4 +24,17 @@ public class GameController {
         return "gameMain";
     }
 
+    @GetMapping("/games/{id}")
+    public String gameDetail(@PathVariable(value = "id") long id, Model model){
+        if (!gameRepository.existsById(id)) {
+            return "redirect:/games";
+        }
+
+        Optional<Game> game = gameRepository.findAllById(id);
+        ArrayList<Game> res = new ArrayList<>();
+        game.ifPresent(res::add);
+        model.addAttribute("game", res);
+
+        return "game_detail";
+    }
 }
