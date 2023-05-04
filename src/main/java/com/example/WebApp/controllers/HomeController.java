@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.Console;
+import java.util.ArrayList;
 
 @Controller
 public class HomeController {
@@ -20,7 +21,14 @@ public class HomeController {
         model.addAttribute("title", "Главная страница");
 
         Iterable<Game> games = gameRepository.findAll();
-        model.addAttribute("games", games);
+        var res = new ArrayList<>();
+        var i = 0;
+        for (var g: games) {
+            if (i % 2 == 0)
+                res.add(g);
+            i += 1;
+        }
+        model.addAttribute("games", res);
 
         return "home";
     }
